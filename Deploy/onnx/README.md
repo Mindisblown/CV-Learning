@@ -1,0 +1,1 @@
+​		ONNX（Open Neural Network Exchange）用于标准描述计算图的一种格式。 ONNX 记录不考虑控制流的静态图。因此，PyTorch 提供了一种叫做追踪（trace）的模型转换方法：给定一组输入，再实际执行一遍模型，即把这组输入对应的计算图记录下来，保存为 ONNX 格式。

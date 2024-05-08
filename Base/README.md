@@ -20,6 +20,12 @@ https://zh.d2l.ai/chapter_computer-vision/transposed-conv.html
 
 https://paddlepedia.readthedocs.io/en/latest/tutorials/CNN/convolution_operator/Separable_Convolution.html
 
+# 膨胀卷积-空洞卷积
+
+​		空洞卷积(Dilated Convolution)，在某些文献中也被称为扩张卷积（Atrous Deconvolution），是针对图像语义分割问题中下采样带来的图像分辨率降低、信息丢失问题而提出的一种新的卷积思路。引入扩张率（Dilation Rate）使得同样尺寸的卷积核获得更大的感受野。相应地，也可以使得在相同感受野大小的前提下，空洞卷积比普通卷积的参数量更少。
+
+https://paddlepedia.readthedocs.io/en/latest/tutorials/CNN/convolution_operator/Dilated_Convolution.html
+
 # dual-softmax
 
 ​		CAMoE(Improving Video-Text Retrieval by Multi-Stream Corpus Alignment and Dual Softmax Loss)中提出，先按列求softmax，再按行求softmax。减少以一个文本同时被多个视频检索。

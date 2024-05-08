@@ -1,7 +1,7 @@
-# 3DCameraFitALgo
+3DCameraFitALgo	2D数据找出疑似缺陷，3D平面通过拟合平面计算2D点在3D数据中的深度来判断是否存在缺陷。曲面拟合来判断整体的凹凸性
 
-​		2D数据找出疑似缺陷，3D平面通过拟合平面计算2D点在3D数据中的深度来判断是否存在缺陷。曲面拟合来判断整体的凹凸性。
-
-2DFit.cpp	RANSAC直线拟合与taubin圆拟合。
+2DFit.cpp	RANSAC直线拟合与taubin圆拟合
 
 ColorChromatism.cpp	hsv空间计算颜色深浅程度
+
+PolarCoordMatch.cpp	图片上圆形物体按极坐标表示进行展开，将输入图像同样极坐标展开后与其匹配，匹配的位置作为图片上文字的旋转角度，多用于物体上文字或印刷方向一致性
