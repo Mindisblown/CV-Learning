@@ -46,3 +46,24 @@ ERFNet: Efficient Residual Factorized ConvNet for Real-time Semantic Segmentatio
 
 Pyramid Scene Parsing Network
 
+![3](./imgs/pspnet.png)
+
+# DeepLabV3
+
+Rethinking Atrous Convolution for Semantic Image Segmentation
+
+![4](./imgs/deeplabv3.png)
+
+# BiSeNet
+
+BiSeNet: Bilateral Segmentation Network for Real-time Semantic Segmentation
+
+![bisenet](./imgs/BiSeNet.png)
+
+# PSANet
+
+PSANet: Point-wise Spatial Attention Network for Scene Parsing
+
+有一种空间KxL和通道(2H-1)x(2W-1)注意力的目的。
+
+![psa](./imgs/psanet.png)
