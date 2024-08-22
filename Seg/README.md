@@ -56,7 +56,43 @@ Dynamic Multi-scale Filters for Semantic Segmentation
 
 CCNet: Criss-Cross Attention for Semantic Segmentation
 
-​		使用稀疏连接来代替Non-Local的密集连接。
+​		Non-Local需要的计算量太大，复杂度从(HxW)x(HxW)降为(HxW)x(H+W-1)。整幅图的attention变成了求十字路径的attention。
+
+## EMANet
+
+Expectation-Maximization Attention Networks for Semantic Segmentation
+
+​		自注意力机制在分割中非常有帮助，但是计算量太大。作者提出EM算法来迭代一组紧凑的基，在这个基上使用注意力，从而减少计算量。
+
+​		最主要的是这种思想：基当做参数，attention map当做隐变量；随机值作为初始的基，E步计算出隐变量的概率分布，M步通过隐变量的概率来迭代参数。
+
+## ANN
+
+Asymmetric Non-local Neural Networks for Semantic Segmentation
+
+​		同样是从Non-Local计算量太大的角度出发，第一步**APNB** Asymmetric Pyramid Non-local Block减少self-attention时key和value的通道数，降低通道采用金字塔采样，对于输入的特征图使用pool得到4个尺度(1x1 3x3  6x6 8x8)，展平成1D再堆叠到一起；第二步**AFNB** Asymmetric Fusion Non-local Block利用高层特征H和低层特征L，L经过卷积得到K和V，H经过卷积得到Q，QK相乘再和V相乘起到特征融合的作用。
+
+## GCNet
+
+GCNet: Non-local Networks Meet Squeeze-Excitation Networks and Beyond
+
+​		Non-Local对于不同的查询点起attention map是一样的，他的全局依赖是位置无关的(任务不一样。语义分割需要对每个像素都输出，所以要“雨露均沾”。分类只需关注最重要的概念就OK；而检测正例数量远远小于反例。只focus正例)。SENet则只考虑了通道间的依赖关系。结合二者使得model能够有长距离的长下文信息还能够比较轻量。
+
+​		核心思想简化了non-local block，本身就是不受位置依赖，那么直接将key经过softmax加到value上。1x1卷积用bottleneck transform模块来取代，降低参数量。两层bottleneck transform增加了优化难度，在ReLU前面增加一个layer normalization层(降低优化难度且作为正则提高了泛化性)。
+
+## FastFCN
+
+FastFCN: Rethinking Dilated Convolution in the Backbone for Semantic Segmentation
+
+​		空洞卷积能获得更大的感受野同时不减小特征图分辨率，提高语义分割精确度，但空洞卷积输出使得分辨率变大，增加了计算开销。作者 提出了Joint Pyramid Upsampling(JPU) 来提取高分辨率特征图。
+
+## Fast-SCNN(实时性友好)
+
+Fast-SCNN for Semantic Segmentation
+
+![scnn](./imgs/fastscnn.png)
+
+
 
 # 2018
 
