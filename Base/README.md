@@ -108,3 +108,7 @@ MNN主要实现步骤：
 # Bottleneck Transformer
 
 ​		将Transformer模型的自注意力机制引入到ResNet模型的Bottleneck结构中。
+
+# 归纳偏置
+
+当学习器去预测其未遇到过的输入的结果时，会做一些假设（Mitchell, 1980）。而归纳偏置则是这些假设的集合。
