@@ -6,7 +6,7 @@ Cls-分类
 
 Deploy-部署
 
-Det-检测
+Yolo-检测
 
 FeatureMatching-特征匹配
 
